@@ -1,4 +1,5 @@
 const express = require('express');
+const { status } = require('express/lib/response');
 const faker = require('faker');
 
 const router = express.Router();
@@ -24,16 +25,18 @@ router.get('/filter', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const {id} = req.params;
-    res.json({
-            id,
-            name: 'Product 1',
-            price: 100
-        })
+    const status_code = id > 100 ? 404 : 200;
+    const data = status_code === 404 ? {"msg":"Not found"} : {
+        id,
+        name: 'Product 1',
+        price: 100
+    }
+    res.status(status_code).json(data)
 });
 
 router.post('/', (req, res) => {
     const body = req.body;
-    res.json({
+    res.status(201).json({
         message:'created',
         data: body,
     });
