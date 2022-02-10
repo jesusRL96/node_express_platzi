@@ -1,27 +1,26 @@
-###
+
 GET  http://localhost:3000/api/v1/products
 
 ###
-GET  http://localhost:3000/api/v1/products/31dc384c-82fc-4751-9652-8d8819247f40
+GET  http://localhost:3000/api/v1/products/a01d4b10-aed8-4fb1-bdf3-de9193756512
 
-
+###
 POST http://localhost:3000/api/v1/products
 Content-Type: application/json
 
 {
     "name": "new name",
-    "price": 200,
+    "price": 150,
     "image": ""
 }
 
 ###
-PATCH http://localhost:3000/api/v1/products/1
+PATCH http://localhost:3000/api/v1/products/a01d4b10-aed8-4fb1-bdf3-de9193756512
 Content-Type: application/json
 
 {
-    "name": "new name",
-    "price": 200
+    "price": 250
 }
 
 ###
-DELETE  http://localhost:3000/api/v1/products/1
+DELETE  http://localhost:3000/api/v1/products/a01d4b10-aed8-4fb1-bdf3-de9193756512
