@@ -3,10 +3,9 @@ const boom = require('@hapi/boom');
 function ValidatorHandler (schema, property) {
     return (req, resp, next) => {
         const data = req[property];
-        const { error } = schema.validate(data);
+        const { error } = schema.validate(data, {abortEarly:false});
         if(error) {
-            boom.badRequest(error);
-            next(error);
+            next(boom.badRequest(error));
         }
         next();
     }

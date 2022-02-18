@@ -9,9 +9,9 @@ POST http://localhost:3000/api/v1/products
 Content-Type: application/json
 
 {
-    "name": "new name",
+    "name": "Name",
     "price": 150,
-    "image": ""
+    "image": "http://placeimg.com/640/480"
 }
 
 ###
@@ -19,7 +19,8 @@ PATCH http://localhost:3000/api/v1/products/a01d4b10-aed8-4fb1-bdf3-de9193756512
 Content-Type: application/json
 
 {
-    "price": 250
+    "name": 20,
+    "price": "hh"
 }
 
 ###
